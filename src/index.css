@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  --forest: #1a3d2e;
+  --forest-dark: #0f2a1e;
+  --forest-light: #2a5c45;
+  --amber: #f59e0b;
+  --amber-light: #fbbf24;
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background: #f8faf9;
+}
+
+.gradient-forest {
+  background: linear-gradient(135deg, #1a3d2e 0%, #2a5c45 100%);
+}
+
+.gradient-amber {
+  background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
+}
+
+.gradient-hero {
+  background: linear-gradient(135deg, #0f2a1e 0%, #1a3d2e 50%, #2a5c45 100%);
+}
+
+.text-shadow {
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.card-hover {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(26, 61, 46, 0.15);
+}
+
+.btn-primary {
+  @apply bg-accent-500 hover:bg-accent-600 text-white font-semibold px-6 py-3 rounded-xl transition-all duration-200 shadow-md hover:shadow-lg active:scale-95;
+}
+
+.btn-secondary {
+  @apply border-2 border-accent-400 text-accent-400 hover:bg-accent-400 hover:text-white font-semibold px-6 py-3 rounded-xl transition-all duration-200;
+}
+
+.btn-green {
+  @apply bg-primary-500 hover:bg-primary-600 text-white font-semibold px-6 py-3 rounded-xl transition-all duration-200 shadow-md hover:shadow-lg;
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.25);
+}
+
+.scrollbar-thin::-webkit-scrollbar { width: 6px; }
+.scrollbar-thin::-webkit-scrollbar-track { background: #f1f1f1; border-radius: 3px; }
+.scrollbar-thin::-webkit-scrollbar-thumb { background: #1a3d2e; border-radius: 3px; }
+
+@keyframes banner-slide {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.banner-scroll {
+  animation: banner-slide 30s linear infinite;
+}
+
